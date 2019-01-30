@@ -1,0 +1,21 @@
+body {
+  background: lightblue;
+}
+.large-font{
+  font-size: 30px;
+}
+.red-color{
+  color: red;
+}
+.btn{
+  font-size: 20px;
+  height: 40px;
+  position: fixed;
+  right: 20px;
+  bottom: 50px;
+}
+.my_btn{
+  position: absolute;
+  top: 200px;
+  left: 100px;;
+}
