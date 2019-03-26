@@ -1,0 +1,169 @@
+>>> a = 2
+>>> type(a)
+<class 'int'>
+>>> a = 'hello'
+>>> type(a)
+<class 'str'>
+>>> a = True
+>>> type(a)
+<class 'bool'>
+>>> a = None
+>>> a
+>>> type(a)
+<class 'NoneType'>
+>>> a
+>>> "asd" + "qwe"
+'asdqwe'
+>>> a = 'hello'
+>>> a[0]
+'h'
+>>> a[:1]
+'h'
+>>> a[0:2]
+'he'
+>>> a[start_index:step:end_indax]
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+NameError: name 'start_index' is not defined
+>>> a[0:2:5]
+'h'
+>>> a = 'hello world'
+>>> a[0:2:5]
+'h'
+>>> a[0:2:5]
+'h'
+>>> a[0:2:2]
+'h'
+>>> a[0:5:2]
+'hlo'
+>>> a[0:5:0]
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+ValueError: slice step cannot be zero
+>>> a[0:5:1]
+'hello'
+>>> f'{2*2} = {4} '
+'4 = 4 '
+>>> '{} = {}'.format(2*2, 4)
+'4 = 4'
+>>> a = []
+>>> type(a)
+<class 'list'>
+>>> a = list()
+>>> type(a)
+<class 'list'>
+>>> a.append(2)
+>>> a
+[2]
+>>> a = {'asd': 123, 'qwe': 321}
+>>> 
+>>> 
+>>> 
+>>> 
+>>> 
+>>> a['asd']
+123
+>>> a['qwe'] = 123
+>>> a
+{'asd': 123, 'qwe': 123}
+>>> len(a)
+2
+>>> 
+>>> a.keys()
+dict_keys(['asd', 'qwe'])
+>>> a.values()
+dict_values([123, 123])
+>>> a.items()
+dict_items([('asd', 123), ('qwe', 123)])
+>>> for i in a.items
+KeyboardInterrupt
+>>> a.items()[0]
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+TypeError: 'dict_items' object does not support indexing
+>>> a.items()
+dict_items([('asd', 123), ('qwe', 123)])
+>>> a.items()[0]
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+TypeError: 'dict_items' object does not support indexing
+>>> a.items()[1]
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+TypeError: 'dict_items' object does not support indexing
+>>> for a.items()
+KeyboardInterrupt
+>>> a
+{'asd': 123, 'qwe': 123}
+>>> for i in a.items():
+...     print(i)
+... 
+('asd', 123)
+('qwe', 123)
+>>> for i in a.items():
+...     print(type(i))
+... 
+<class 'tuple'>
+<class 'tuple'>
+>>> z
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+NameError: name 'z' is not defined
+>>> a
+{'asd': 123, 'qwe': 123}
+>>> a['asdasd']
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+KeyError: 'asdasd'
+>>> a.get('asdasd')
+>>> b = a.get('asdasd')
+>>> b
+>>> type(b)
+<class 'NoneType'>
+>>> b = a.get('asdasd', 3)
+>>> b
+3
+>>> a['asdasd'] = 333
+>>> a
+{'asd': 123, 'qwe': 123, 'asdasd': 333}
+>>> if 1 == 1:
+...     print('yes')
+... 
+yes
+>>> 
+>>> 
+>>> 
+>>> 
+>>> 
+>>> 
+>>> def hi():
+...     print('hello')
+... 
+>>> hi()
+hello
+>>> def sum(a, b):
+...     return a + b
+... 
+>>> sum(2, 3)
+5
+>>> def mult(a, b=3):
+...     return a * b
+... 
+>>> mult(2, 5)
+10
+>>> mult(2)
+6
+>>> class Person:
+...     def __init__(self):
+...             print('constructor')
+... 
+>>> p = Person()
+constructor
+>>> 
+>>> 
+>>> class Student(Person):
+...     def __init__(self):
+...             self.name = 'Student 1'
+...             self.age = 20
+... 
+>>> 
