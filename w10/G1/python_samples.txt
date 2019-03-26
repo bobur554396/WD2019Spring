@@ -1,0 +1,163 @@
+>>> a = 2
+>>> a = 'hello'
+>>> a
+'hello'
+>>> type(a)
+<type 'str'>
+>>> a = 2
+>>> type(a)
+<type 'int'>
+>>> a = True
+>>> type(a)
+<type 'bool'>
+>>> a == True
+True
+>>> a = None
+>>> a
+>>> a
+>>> 'hello'
+'hello'
+>>> 
+>>> 
+>>> 
+>>> 
+>>> 
+>>> 
+>>> 
+>>> 
+>>> 
+>>> "hello"
+'hello'
+>>> 
+>>> 
+>>> "hello python"
+'hello python'
+>>> 'hello python'
+'hello python'
+>>> 
+>>> 
+>>> 
+>>> 
+>>> 
+>>> 
+>>> 
+>>> 
+>>> "a" + "b"
+'ab'
+>>> 'hello'[0]
+'h'
+>>> 'hello'[:1]
+'h'
+>>> 'hello'[:3]
+'hel'
+>>> 'hello'[1:3]
+'el'
+>>> 
+>>> 
+>>> 
+>>> 
+>>> 
+>>> 
+>>> 
+>>> 
+>>> 
+>>> 
+>>> a = []
+>>> type(a)
+<type 'list'>
+>>> b = list()
+>>> type(b)
+<type 'list'>
+>>> 
+>>> a
+[]
+>>> 
+>>> 
+>>> 
+>>> 
+>>> 
+>>> 
+>>> 
+>>> 
+>>> 
+>>> a = {'asd': 123, 'qwe': 321}
+>>> a['asd']
+123
+>>> a['qwe']= 123
+>>> a
+{'qwe': 123, 'asd': 123}
+>>> a['asdasd']
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+KeyError: 'asdasd'
+>>> a.keys()
+['qwe', 'asd']
+>>> a.items()
+[('qwe', 123), ('asd', 123)]
+>>> a.items()[0]
+('qwe', 123)
+>>> type(a.items()[0])
+<type 'tuple'>
+>>> len(a)
+2
+>>> if 1 == 1:
+...     print('1 == 1')
+... 
+1 == 1
+>>> for i in [1, 2, 3]:
+...     print(i*2)
+... 
+2
+4
+6
+>>> 
+>>> 
+>>> 
+>>> 
+>>> 
+>>> 
+>>> 
+>>> 
+>>> 
+>>> 
+>>> 
+>>> 
+>>> 
+>>> 
+>>> 
+>>> 
+>>> def hi():
+...     print('hello')
+... 
+>>> hi()
+hello
+>>> def sum(a, b):
+...     return a + b
+... 
+>>> sum(2, 3)
+5
+>>> def sum2(a, b=3):
+...     return a + b
+... 
+>>> sum2(3, 5)
+8
+>>> sum2(3)
+6
+>>> class Person:
+...     def __init__(self):
+...             print("constructor")
+... 
+>>> p = Person()
+constructor
+>>> class Student(Person):
+...     def __init__(self):
+...             self.name = 'Studet'
+...             self.age = 20
+... 
+>>> 
+>>> s = Studet()
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+NameError: name 'Studet' is not defined
+>>> s = Student()
+>>> 
