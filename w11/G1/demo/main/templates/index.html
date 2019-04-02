@@ -1,0 +1,35 @@
+{% extends 'base.html' %}
+
+{% block body %}
+
+    <h1>Index page</h1>
+    <h3>{{ name }}</h3>
+    <p>{{ current_time }}</p>
+    {% if is_logged_in %}
+        <button>Logout</button>
+    {% else %}
+        <button>Login</button>
+    {% endif %}
+
+    <ul>
+        {% for n in nums %}
+            <li>{{ n }}</li>
+        {% endfor %}
+    </ul>
+
+    <h4>Product ID: {{ product.id }}</h4>
+    <h4>Product NAME: {{ product.name }}</h4>
+
+    <h1>Product List</h1>
+
+    {# comment #}
+
+    <ul>
+        {% for product in products %}
+            <li>
+                <h4>ID: {{ product.id }}, name: {{ product.name }}</h4>
+            </li>
+        {% endfor %}
+    </ul>
+
+{% endblock %}

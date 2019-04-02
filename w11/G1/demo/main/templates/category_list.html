@@ -1,0 +1,9 @@
+{% extends 'base.html' %}
+
+{% block body %}
+    <ul>
+        {% for category in categories %}
+            <li>{{ category.id }}: {{ category.name }}</li>
+        {% endfor %}
+    </ul>
+{% endblock %}
