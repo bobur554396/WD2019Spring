@@ -1,47 +1,47 @@
-<!--<app-child [title]="'Title from Parent!'"-->
-           <!--[numberArray]="[1,2,3,4,5]"-->
-           <!--(output)="output = $event"-->
-           <!--(stringArray)="stringArray = $event"-->
-<!--&gt;</app-child>-->
+<app-child [title]="'Title from Parent!'"
+           [numberArray]="[1,2,3,4,5]"
+           (output)="output = $event"
+           (stringArray)="stringArray = $event"
+></app-child>
 
-<!--OUTPUT STRING:-->
-<!--<h3>{{output}}</h3>-->
+OUTPUT STRING:
+<h3>{{output}}</h3>
 
 
-<!--OUTPUT STRINGS:-->
+OUTPUT STRINGS:
+<div>
+  <div *ngFor="let s of stringArray">{{s}}</div>
+</div>
+
+
+SEND MESSAGE BY SERVICE:
+<div (click)="sendMessageByService()">SEND MESSAGE BY SERVICE</div>
+
+<!--CREATE CATEGORY:-->
 <!--<div>-->
-  <!--<div *ngFor="let s of stringArray">{{s}}</div>-->
+  <!--<input type="text" [(ngModel)]="name" />-->
+  <!--<button (click)="createCat()">Create</button>-->
 <!--</div>-->
 
+<!--CATEGORIES-->
+<!--<ng-container *ngIf="!loading">-->
+  <!--Loading...-->
+<!--</ng-container>-->
 
-<!--SEND MESSAGE BY SERVICE:-->
-<!--<div (click)="sendMessageByService()">SEND MESSAGE BY SERVICE</div>-->
+<!--<ng-container *ngIf="loading">-->
+  <!--<div>-->
+    <!--<div *ngFor="let c of categories">-->
+      <!--<span (click)="getProducts(c)">-->
+        <!--<input type="text" [(ngModel)]="c.name" />-->
+      <!--</span>-->
+      <!--<span style="color: red" (click)="deleteCat(c)"> Delete</span>-->
+      <!--<span style="color: green" (click)="updateCat(c)"> Edit</span>-->
+    <!--</div>-->
+  <!--</div>-->
+<!--</ng-container>-->
 
-CREATE CATEGORY:
-<div>
-  <input type="text" [(ngModel)]="name" />
-  <button (click)="createCategory()">Create</button>
-</div>
-
-CATEGORIES
-<ng-container *ngIf="!loading">
-  Loading...
-</ng-container>
-
-<ng-container *ngIf="loading">
-  <div>
-    <div *ngFor="let c of categories">
-      <span (click)="getProducts(c)">
-        <input type="text" [(ngModel)]="c.name" />
-      </span>
-      <span style="color: red" (click)="deleteCategory(c)"> Удалить</span>
-      <span style="color: green" (click)="updateCategory(c)"> Изменить</span>
-    </div>
-  </div>
-</ng-container>
-
-<br/>
-PRODUCTS:
-<div>
-  <div *ngFor="let p of products">{{p.id}} - {{p.name}} - {{p.price}} - {{p.count}}</div>
-</div>
+<!--<br/>-->
+<!--PRODUCTS:-->
+<!--<div>-->
+  <!--<div *ngFor="let p of products">{{p.id}} - {{p.name}} - {{p.price}} - {{p.count}}</div>-->
+<!--</div>-->
