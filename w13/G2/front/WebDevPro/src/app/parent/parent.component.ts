@@ -19,10 +19,10 @@ export class ParentComponent implements OnInit {
 
   public name: any = '';
 
-  public logged = false;
+  public isLogged = false;
 
-  public login: any = '';
-  public password: any = '';
+  public login = '';
+  public password = '';
 
   constructor(private provider: ProviderService) {
   }
@@ -31,18 +31,20 @@ export class ParentComponent implements OnInit {
 
     const token = localStorage.getItem('token');
     if (token) {
-      this.logged = true;
+      this.isLogged = true;
     }
 
-    if (this.logged) {
-      this.provider.getCategories().then(res => {
-        this.categories = res;
-        setTimeout(() => {
-          this.loading = true;
-        }, 2000);
-      });
+    if (this.isLogged) {
+      this.getCategories();
     }
 
+  }
+
+  getCategories() {
+    this.provider.getCategories().then(res => {
+      this.categories = res;
+      this.loading = true;
+    });
   }
 
   getProducts(category: ICategory) {
@@ -83,24 +85,16 @@ export class ParentComponent implements OnInit {
     if (this.login !== '' && this.password !== '') {
       this.provider.auth(this.login, this.password).then(res => {
         localStorage.setItem('token', res.token);
-
-        this.logged = true;
-
-        this.provider.getCategories().then(r => {
-          this.categories = r;
-          setTimeout(() => {
-            this.loading = true;
-          }, 2000);
-        });
-
+        this.isLogged = true;
+        this.getCategories();
       });
     }
   }
 
   logout() {
     this.provider.logout().then(res => {
+      this.isLogged = false;
       localStorage.clear();
-      this.logged = false;
     });
   }
 

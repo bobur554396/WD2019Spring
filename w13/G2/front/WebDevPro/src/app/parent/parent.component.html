@@ -17,15 +17,22 @@
 <!--SEND MESSAGE BY SERVICE:-->
 <!--<div (click)="sendMessageByService()">SEND MESSAGE BY SERVICE</div>-->
 
-<ng-container *ngIf="!logged">
+<ng-container *ngIf="!isLogged">
   <div>
-    <div><input type="text" [(ngModel)]="login" /></div>
-    <div><input type="text" [(ngModel)]="password" /></div>
-    <div><button (click)="auth()">Log in</button></div>
+    <div>
+      <input type="text" placeholder="Login" [(ngModel)]="login"/>
+    </div>
+    <div>
+      <input type="password" placeholder="Password" [(ngModel)]="password"/>
+    </div>
+    <div>
+      <button (click)="auth()">Log in</button>
+    </div>
   </div>
 </ng-container>
 
-<ng-container *ngIf="logged">
+
+<ng-container *ngIf="isLogged">
   CREATE CATEGORY:
   <div>
     <input type="text" [(ngModel)]="name" />
