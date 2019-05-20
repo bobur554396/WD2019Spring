@@ -1,0 +1,37 @@
+<body>
+  <ng-container *ngIf="!logged">
+    <div>
+      <div>
+        <form>
+          <label for="username"><b>Username</b></label>
+          <input type="text" placeholder="ENTER YOUR USERNAME" [(ngModel)]="username" name="username" required>
+          <label for="psw"><b>Password</b></label>
+          <input type="password" placeholder="ENTER YOUR PASSWORD" [(ngModel)]="password" name="pwd" required>
+          <button class="LoginBTN" (click)="auth()">LOG IN</button>
+        </form>
+      </div>
+    </div>
+  </ng-container>
+  <ng-container *ngIf="logged">
+    <button class="LoginBTN" (click)="logout()">LOG OUT</button>
+    <ng-container *ngIf="!loading">
+      Loading...
+    </ng-container>
+
+    <ng-container *ngIf="loading">
+        <div style="margin-botton: 10px;">
+            <input type="text" [(ngModel)]="contactName" placeholder="Enter Contact Name" style="border:2px solid black; border-radius: 5px; font-size: 15px;">
+            <input type="text" [(ngModel)]="contactPhone" placeholder="Enter Contact Phone" style="border:2px solid black; border-radius: 5px; font-size: 15px;">
+            <button (click)="createContact()" class="button">Create Contact</button>
+          </div>
+      <div>
+        <div *ngFor="let p of contactList">
+            <input type="text" [(ngModel)]="p.name">
+            <input type="text" [(ngModel)]="p.phone">
+          <span style="color: orange" (click)="deleteContact(p)"> DELETE</span>
+          <span style="color: green" (click)="updateContact(p)"> UPDATE</span>
+        </div>
+      </div>
+    </ng-container>
+  </ng-container>
+</body>

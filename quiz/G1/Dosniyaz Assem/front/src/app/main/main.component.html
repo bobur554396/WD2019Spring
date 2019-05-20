@@ -1,0 +1,37 @@
+
+<ng-container *ngIf = "!logged">
+    <div>
+      <div><input type = "text" [(ngModel)] = "login" /></div>
+      <div><input type="text" [(ngModel)] = "password" /></div>
+      <div><button (click) = "auth()"> Log In</button></div>
+    </div>
+  </ng-container>
+
+ <ng-container *ngIf = "logged">
+  CREATE NEW CONTACT
+  <ng-container>
+
+    <div>
+      <div>
+        <input type="text" [(ngModel)]="name"/>
+        <input type = "text" [(ngModel)] = "phone"/>
+        <button (click) = "createContact()">Create</button>
+      </div>
+      <br>
+      <br>
+      <br>
+      CONTACTS:
+      <div *ngFor ="let c of contacts">
+        <span >
+          <input type = "text" [(ngModel)] = "c.name"/>
+          <input type = "text" [(ngModel)] = "c.phone"/>
+        </span>
+        <button (click) = "updateContact(c)">Update</button>
+        <button (click) = "deleteContact(c)">Delete</button>
+      </div>
+    </div>
+  </ng-container>
+  <div>
+      <button (click)="logout()">Log Out </button>
+    </div>
+ </ng-container>

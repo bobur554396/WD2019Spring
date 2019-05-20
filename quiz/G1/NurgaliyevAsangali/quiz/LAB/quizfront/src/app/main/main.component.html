@@ -1,0 +1,55 @@
+<body>
+  <ng-container *ngIf="!logged">
+    <div>
+      <div>
+        <form>
+          <label for="username"><b>Username</b></label>
+          <input type="text" placeholder="enter username" [(ngModel)]="username" name="username" required>
+          <label for="psw"><b>Password</b></label>
+          <input type="password" placeholder="enter password" [(ngModel)]="password" name="pwd" required>
+          <button class="loginbtn" (click)="auth()">LOG IN</button>
+        </form>
+      </div>
+    </div>
+  </ng-container>
+  <ng-container *ngIf="logged">
+    <button class="loginbtn" (click)="logout()">LOG OUT</button>
+    <ng-container *ngIf="!loading">
+      Loading...
+    </ng-container>
+
+    <ng-container *ngIf="loading">
+      <div style="margin-botton: 10px;">
+        <input type="text" [(ngModel)]="postTitle"
+          style="border:2px solid black; border-radius: 12px; font-size: 24px;">
+        <button (click)="createPost()" class="button">CREATE</button>
+      </div>
+      <div>
+        <div *ngFor="let p of postList" class="post-list">
+          <span (click)="getDetails(p)">
+            <input type="text" [(ngModel)]="p.title"><br>
+            <h4>
+              Created at: {{p.created_at}} <br>
+              Like count: {{p.like_count}}</h4>
+          </span>
+          <span style="color: orange" (click)="deletePost(p)"> DELETE</span>
+          <span style="color: green" (click)="updatePost(p)"> UPDATE</span>
+          <span style="color: blue" (click)="putLike(p)"> LIKE</span>
+        </div>
+      </div>
+    <ng-container *ngIf="!flag">
+      Post is not selected...
+    </ng-container>
+    <ng-container *ngIf="flag">
+        <div class="detailed-info">
+            <h1>Details about {{currentPostTitle}}</h1> <br>
+            <span>ID: {{currentPost.id}}</span> <br>
+            <span>BODY: {{currentPost.body}}</span> <br>
+            <span>LIKE_COUNT: {{currentPost.like_count}}</span> <br>
+            <span>CREATED_AT: {{currentPost.created_at}}</span> <br>
+            <span>CREATED_BY: {{currentPost.created_by.username}}</span>
+          </div>
+    </ng-container>
+    </ng-container>
+  </ng-container>
+</body>

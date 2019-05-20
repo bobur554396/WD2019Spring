@@ -1,0 +1,169 @@
+/* You can add global styles to this file, and also import other style files */
+body{
+    font-family: 'Gruppo';
+    /* background-image: url("https://images.unsplash.com/photo-1511447333015-45b65e60f6d5?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&w=1000&q=80"); */
+     background-image: url("http://hdqwalls.com/wallpapers/neon-lights-lamborghini-aw.jpg"); 
+
+    background-size:120%;
+    background-repeat: no-repeat;
+    
+    color:rgb(255, 255, 255);
+    font-weight: 900;
+    margin: 0px;
+    
+   
+}
+.lists li:hover{
+    opacity: 0.8;
+}
+.auth #but:hover{
+    box-shadow: 0px 0px 15px rgb(148, 247, 139);
+    background: linear-gradient(to right,rgba(8, 231, 101, 0.699), rgba(41, 43, 184, 0.568));
+
+}
+::-webkit-scrollbar {
+    display: none;
+}
+.lists, .tasks{
+    width:85%;
+    display: flex;
+    overflow-x: scroll;
+    text-align: center;
+    align-items: center;  
+    position: relative;
+    left: 100px;
+    top:-80px;
+    
+}
+.update{
+    background: linear-gradient(to right,rgba(231, 190, 8, 0.699), rgba(41, 43, 184, 0.568));
+    float: right;
+}
+input{
+    background: linear-gradient(to right,rgba(8, 231, 101, 0.699), rgba(41, 43, 184, 0.568));
+    width:400px;
+    border-radius: 15px;
+    border:1px solid lightgrey;
+    padding:10px;
+    margin: 10px;
+    font-size:25px;
+    box-shadow: 0px 0px 15px rgb(222, 139, 247);
+    font-family: 'Gruppo';
+    color:white;
+
+}
+::placeholder{
+    color:rgba(255, 255, 255, 0.712);
+}
+li{
+    list-style: none;
+    border-radius: 15px;
+    border:1px solid lightgrey;
+    padding:10px;
+    margin: 10px;
+    font-size:25px;
+    box-shadow: 0px 0px 15px rgb(222, 139, 247);
+    
+}
+*:focus{
+    outline: none;
+}
+.lists li, .auth input{
+    background: linear-gradient(to right,rgba(231, 8, 56, 0.699), rgba(41, 43, 184, 0.568));
+    width:400px;
+}
+.tasks li{
+    background: linear-gradient(to top,rgba(8, 168, 231, 0.699), rgba(41, 43, 184, 0.575));
+    width:400px;
+    height: 130px;
+    overflow-y:scroll;
+}
+li p{
+    margin: 5px;
+    width: 400px;
+    word-wrap: break-word;
+	word-break: break-all;
+}
+h1{
+    font-size: 80px;
+    margin:0px;
+    text-align: center;
+    white-space: nowrap;
+    min-width: 1000px;
+    position: relative;
+    top:-90px;
+
+}
+.tasks{
+    width: 95%;
+    left: 10px;
+}
+img{
+    padding-left: 30px;
+    padding-right: 30px;
+}
+#ar2{
+    position: relative;
+    top:-213px;
+    left: 92%;
+}
+#ar1{
+    position: relative;
+    right: 1%;
+}
+.func{
+    float: right;
+    padding:0px;
+    margin-right: 5px;
+}
+.func:hover{
+    opacity: 0.6;
+}
+.auth{
+    display: flex;
+    justify-content: center;
+    
+    min-width: 973px;
+}
+.auth input:hover{
+    box-shadow: 0px 0px 15px rgb(31, 13, 192);
+}
+.regist{
+    font-size: 20px;
+    padding:40px;
+    display: flex;
+    flex-direction: column;
+    flex-wrap:nowrap;
+    text-align: center;
+    width:450px;
+    justify-items: center;
+    align-items: center;
+    border-radius: 30px;
+    box-shadow: 0px 0px 20px rgb(217, 190, 235);
+    background: url("https://i.gifer.com/origin/53/5366eef68903d212ba5ca6c6cb2028e5_w200.webp");
+}
+button{
+    background: linear-gradient(to right,rgba(10, 25, 228, 0.699), rgba(41, 43, 184, 0.568));
+    width:200px;
+    border-radius: 15px;
+    border:1px solid lightgrey;
+    padding:10px;
+    margin: 10px;
+    font-size:20px;
+    box-shadow: 0px 0px 15px rgb(222, 139, 247);
+    font-family: 'Gruppo';
+    color:white;
+    
+}
+button:hover{
+    box-shadow: 0px 0px 15px rgb(80, 196, 231);
+    width: 210px;
+}
+#gif{
+    position: relative;
+    top:80px;
+    margin:0px;
+    padding:0px;
+}
+
+

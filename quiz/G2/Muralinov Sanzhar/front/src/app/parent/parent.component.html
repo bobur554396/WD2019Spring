@@ -1,0 +1,11 @@
+<ng-container *ngIf="!loading">
+  loading...
+</ng-container>
+
+<ng-container *ngIf="loading">
+  <div>
+    <div *ngFor="let c of categories" (click) = "getContacts(c)"> {{c.id}} - {{c.name}} - {{phone}}
+    </div>
+  </div>
+</ng-container>
+

@@ -1,0 +1,68 @@
+<!--The content below is only a placeholder and can be replaced.-->
+
+<ng-container *ngIf="!logged">
+  <div style="display: flex; flex-direction: column; width: 200px; align-items: center; line-height: 0;align-self: center;justify-self: center;">
+    <p>Login</p>
+    <p><input type="text" [(ngModel)]="login" /></p> 
+    <p>Password</p>
+    <p><input type="text" [(ngModel)]="password"/> </p>
+    <button (click)="authorize()">Sign in</button>
+  </div>
+</ng-container>
+<ng-container *ngIf="logged">
+  <div>
+    <ng-container *ngIf="!wantupdate">
+      <div style="display:flex;">
+          <div *ngFor="let item of contacts" style="list-style:none;border:1px solid red;display:flex;width:280px;flex-direction: row; margin: 5px;">
+              <div style="width:60%;" class="blocks">
+                <li> Id: {{item.id}} </li>
+                <li> Name: {{item.name}} </li>
+                <li> Phone: {{item.phone}} </li>
+                <li> Created_by: {{item.created_by.username}} </li>
+              </div>
+              <div style="width:40%;" class="blocks">
+                <li> <button (click)="makeUpdatable(item)">Update</button> </li>
+                <li> <button (click)="deleteContact(item)" >Delete</button> </li>
+              </div>
+            </div>
+      </div>
+     
+  </ng-container>
+  <ng-container *ngIf="wantupdate">
+    <div style="display:flex;">
+        <div *ngFor="let item of contacts" style="list-style:none;border:1px solid red;display:flex;width:300px;">
+            <div class="blocks" style="width:50%;">
+              <li> Id: {{item.id}} </li>
+              <li> Name: {{item.name}} </li>
+              <li> Phone: {{item.phone}} </li>
+              <li> Created_by: {{item.created_by.username}} </li>
+            </div>
+            <div class="blocks" style="width:50%;">
+              <li> <button (click)="makeUpdatable(item)">Update</button> </li>
+              <li> <button (click)="deleteContact(item)" >Delete</button> </li>
+            </div>
+          </div>
+    </div>
+
+      <div style="list-style:none;" class="blocks">
+        <li>Id: {{currentContact.id}} </li>
+        <li>Name: <input type="text" [(ngModel)]="currentContact.name"/>  </li>
+        <li>Phone:  <input type="text" [(ngModel)]="currentContact.phone" /> </li>
+        <li> <button (click)="updateCont()">Update Contact</button> </li>
+      </div>
+  </ng-container>
+  
+  <div>
+    <li> Create Contact: </li>
+    <li>New Name: <input type="text" [(ngModel)]="newName"/> </li>
+    <li>New Phone: <input type="text" [(ngModel)]="newPhone"/> </li>
+    <li> <button (click)="createCont()">Create Contact</button> </li>
+  </div>
+
+  <button (click)="logout()">Log out</button>
+  </div>
+  
+</ng-container>
+
+
+<router-outlet></router-outlet>

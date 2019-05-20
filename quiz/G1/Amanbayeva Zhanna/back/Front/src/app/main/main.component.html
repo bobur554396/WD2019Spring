@@ -1,0 +1,50 @@
+<div *ngIf="!logged">
+  <input type="text" placeholder="username..." [(ngModel)]="username">
+  <input type="text" placeholder="password..." [(ngModel)]="password">
+  <button (click) = "login()" class= "login">Login</button>
+</div>
+<div *ngIf = "logged">
+  <button (click) = "logout()" class= "login">Log out</button>
+  <div class="contacts">
+    <div class="content">
+      <div class="inbook">
+        <div *ngFor="let t of Contacts" (click) = "getContact(t)" class = "contacts">
+          <div class="data">
+            <input type="text" [(ngModel)]="t.name">
+          </div>
+          <span (click) = "updateContact(t)">CHANGE</span>
+          <span (click) = "deleteContact(t)">DELETE</span>
+          <span (click) = "getContact(t)">SHOW</span>
+        </div>
+        <div class="create">
+          <input type="text" class = "createInput" id = "createInput" placeholder="New Contact... No more than 200" [(ngModel)]="name">
+          <button class="createBtn" (click) = "createContact()">CREATE</button>
+        </div>
+      </div>
+
+      <div class="Info">
+          <div class="container">
+            <div *ngFor = "let t of contacts" class = "contact">
+              
+                <div><span> Name: </span> <input type="text" [(ngModel)]="t.name"></div>
+               
+                <div><span> Status: </span> <input type="text" [(ngModel)]="t.phone"></div>
+                
+              
+              <div class="bttns">
+                <span (click) = "updateInfo(t)">CHANGE</span>
+                <span (click) = "deleteContact(t)">DELETE</span>
+              </div>
+            </div>
+          </div>
+  <!--      <div class="inTasks__create">-->
+  <!--        <input type="text" class = "createInput" placeholder="New Task Name... No more than 200" [(ngModel)]="taskName">-->
+  <!--        <input type="text" class = "createInput" placeholder="New Task Status... No more than 200" [(ngModel)]="taskStatus">-->
+  <!--        <div>-->
+  <!--        <div>-->
+  <!--        <button class="createBtn" (click) = "createTask()">CREATE</button>-->
+  <!--      </div>-->
+        </div>
+    </div>
+  </div>
+</div>

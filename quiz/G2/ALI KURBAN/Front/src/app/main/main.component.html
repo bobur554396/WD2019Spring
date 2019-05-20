@@ -1,0 +1,18 @@
+<header>
+  <h1>Contacts</h1>
+</header>
+
+<div>
+  <ul>
+    <li *ngFor="let contact of contacts">
+      <h3 (click)="showContactDetails(contact)">{{contact.name}}</h3>
+      <p>{{contact.phone}}</p>
+      <div *ngIf="currentId===contact.id">
+        <input type="text" [(ngModel)]="contact.name"/>
+        <input type="text" [(ngModel)]="contact.phone"/>
+        <button (click)="editContact(contact)">Update</button>
+        <button (click)="deleteContact(contact)">Delete</button>
+      </div>
+    </li>
+  </ul>
+</div>

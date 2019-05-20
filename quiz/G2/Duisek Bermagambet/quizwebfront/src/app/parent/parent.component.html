@@ -1,0 +1,48 @@
+<header>
+  <h1>Contacts</h1>
+</header>
+
+<main>
+<div class="loginf"*ngIf="!loggedin">
+  <h2>Log In, please</h2>
+<input type="text" id="login" [(ngModel)]="currentlogin">
+<br>
+<input type="text" id="pw" [(ngModel)]="currentpassword">
+<br>
+<button (click)="auth()">Log In</button>
+</div>
+
+<div class="creation" *ngIf="loggedin">
+  <div>
+    <h1>Create a new contact</h1>
+    <input type="text" [(ngModel)]="name">
+    <button (click)="createContact()">Create</button>
+  </div>    
+<div class="bodyall">
+  <div *ngFor="let c of contacts">
+    <div class="xdlists" *ngIf="!updatable">
+      <span>
+        <a>Contact's name is: {{c.name}}</a>
+      </span>
+    </div>
+    <div class="xdlists" *ngIf="updatable">
+        <span>
+            <a>Changing name of: </a>
+            <input type="text" [(ngModel)]="c.name">
+        </span>
+      </div>
+      <span style="color:red" (click)="deleteContact(c)"> Delete </span>
+      <span style="color:yellow" (click)="updateContact(c)"> Update</span>
+  </div>
+  </div>
+
+  <div class="logout">
+      <div>
+        <button (click)="deauth()">Log Out</button>
+      </div>
+</div>
+</div>
+</main>
+<footer>
+  <h3>Almaty 2019</h3>
+</footer>

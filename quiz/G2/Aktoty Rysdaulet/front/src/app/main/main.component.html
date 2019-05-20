@@ -1,0 +1,49 @@
+<ng-container *ngIf="!isLogged">
+  <div>
+    <div>
+      <input class="lists" type="text" placeholder="Login" [(ngModel)]="login"/>
+    </div>
+    <div>
+      <input class="lists" type="password" placeholder="Password" [(ngModel)]="password"/>
+    </div>
+    <div>
+      <button class="btn" (click)="auth()">Log in</button>
+    </div>
+  </div>
+</ng-container>
+
+<ng-container *ngIf="isLogged">
+  <p class="text">To create new contacts write the name and phone below:</p>
+  <div>
+    <input class="lists" type="text" [(ngModel)]="name" />
+    <input class="lists" type="text" [(ngModel)]="phone" />
+    <button class="btn1" (click) = "createContacts()" >Create Contact</button>
+  </div>
+
+
+  <p class="text">Contacts:</p>
+
+
+  <ng-container *ngIf="!loading">
+  <p class="text">Loading...</p>
+  
+  </ng-container>
+
+  <ng-container *ngIf ="loading">
+    <div>
+        <div *ngFor = "let l of contacts">           
+            <input class="lists" type="text" [(ngModel)] = "l.name">  
+            <input class="lists" type="text" [(ngModel)] = "l.phone">  
+            <span class="edit" (click) = "updateContacts(l)" > UPDATE</span>
+            <span class="delete" (click) = "deleteContacts(l)" > DELETE</span>
+          </div>
+    </div> 
+  </ng-container>
+    
+  <br>
+  <br>
+  <div>
+    <button class="btn" (click)="logout()">Log out</button>
+  </div>
+
+</ng-container>

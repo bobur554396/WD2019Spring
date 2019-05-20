@@ -1,0 +1,63 @@
+<!--<app-child [title]="'Title from Parent!'"-->
+           <!--[numberArray]="[1,2,3,4,5]"-->
+           <!--(output)="output = $event"-->
+           <!--(stringArray)="stringArray = $event"-->
+<!--&gt;</app-child>-->
+
+<!--OUTPUT STRING:-->
+<!--<h3>{{output}}</h3>-->
+
+
+<!--OUTPUT STRINGS:-->
+<!--<div>-->
+  <!--<div *ngFor="let s of stringArray">{{s}}</div>-->
+<!--</div>-->
+
+
+<!--SEND MESSAGE BY SERVICE:-->
+<!--<div (click)="sendMessageByService()">SEND MESSAGE BY SERVICE</div>-->
+
+<ng-container *ngIf="!isLogged">
+  <div>
+    <div>
+      <input type="text" placeholder="Login" [(ngModel)]="login"/>
+    </div>
+    <div>
+      <input type="password" placeholder="Password" [(ngModel)]="password"/>
+    </div>
+    <div>
+      <button (click)="auth()">Log in</button>
+    </div>
+  </div>
+</ng-container>
+
+
+<ng-container *ngIf="isLogged">
+  CREATE CONTACT:
+  <div>
+    <input type="text" [(ngModel)]="name" />
+    <button (click)="createContact()">Create</button>
+  </div>
+
+  CONTACTS
+  <ng-container *ngIf="!loading">
+    Loading...
+  </ng-container>
+
+  <ng-container *ngIf="loading">
+    <div>
+      <div *ngFor="let c of contacts">
+      <span (click)="getContact()">
+        <input type="text" [(ngModel)]="c.name" />
+      </span>
+        <span style="color: red" (click)="deleteContact(c)"> Удалить</span>
+        <span style="color: green" (click)="updateContact(c)"> Изменить</span>
+      </div>
+    </div>
+  </ng-container>
+
+  <div>
+    <button (click)="logout()">Log out</button>
+  </div>
+
+</ng-container>

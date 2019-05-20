@@ -1,0 +1,14 @@
+<div *ngIf="logged">
+<label style="color: rgb(175, 135, 35)" for="input1">login       </label> <input id="input1" [(ngModel)]="login">>  <br>
+<label style="color: darkgoldenrod" for="input2" >password </label> <input id="input2" [(ngModel)]="password"> >  <br>
+<button (click)="login1()">login</button>
+</div>
+
+<div *ngIf="!logged">
+<button>Show contacts</button>
+
+
+
+
+<button (click)="logout1()">logout</button>
+</div>

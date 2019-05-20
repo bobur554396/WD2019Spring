@@ -1,0 +1,33 @@
+<ng-container *ngIf="!logged">
+  <div>
+    <div>
+      <input type="text" placeholder="Login" [(ngModel)]="login"/>
+    </div>
+    <div>
+      <input type="password" placeholder="Password" [(ngModel)]="password"/>
+    </div>
+    <div>
+      <button (click)="auth()">Log in</button>
+    </div>
+  </div>
+</ng-container>
+
+  TASKLISTS
+
+  <ng-container>
+    <div>
+      <div *ngFor="let p of contacts">
+      <span (click)="getContact(p)">
+        <input type="text" [(ngModel)]="p.title" />
+      </span>
+        <span style="color: red" (click)="deleteContact(p)"> Удалить</span>
+        <span style="color: green" (click)="updateContact(p)"> Изменить</span>
+      </div>
+    </div>
+  </ng-container>
+
+  <div>
+    <button (click)="logout()">Log out</button>
+  </div>
+
+</ng-container>

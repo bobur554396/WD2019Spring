@@ -1,0 +1,37 @@
+<ng-container *ngIf="!logged">
+    <p>Username</p>
+    <input type="text" [(ngModel)]="username" placeholder="Username">
+    <p>Password</p>
+    <input type="password" [(ngModel)]="password" placeholder="Password">
+    <br>
+    <input style="border:6px ridge rgba(32, 191, 219, 0.897);
+    background: linear-gradient(to right, rgba(37, 201, 223, 0.589),white);"
+     type="submit" value="Log In" (click)="logIN()">
+</ng-container>
+<ng-container *ngIf="logged">
+    <button style="border:6px ridge rgb(61, 138, 61);background:
+     linear-gradient(to right, rgba(0, 128, 64, 0.589),white);"*ngIf="!cr" (click)="crPer()">Add new contact</button>
+    <ng-container *ngIf="cr">
+            Name
+            <input type="text" [(ngModel)]="name" placeholder=" name">
+            Phone
+            <input type="text" [(ngModel)]="phone" placeholder="phone">
+            <br>
+            <button style="border:6px ridge rgb(61, 138, 61);background: linear-gradient(to right, rgba(0, 128, 64, 0.589),white);" 
+            (click)="create()">Create</button>
+            <button style="border:6px ridge rgb(61, 138, 61);" (click)="back()">Back</button>
+    </ng-container>
+    <p style="font-size:25px;text-shadow: 2px 3px 3px rgb(138, 26, 230);">MY CONTACTS: </p>
+    <div *ngFor="let c of contacts">
+        <li >
+            <input  disabled type="text" [(ngModel)]="c.name">: 
+            <input disabled type="text" [(ngModel)]="c.phone">
+            <button  (click)="update(c,$event)">Update</button>
+            <button style="border:6px ridge rgb(223, 76, 101);
+            background: linear-gradient(to right, rgba(128, 0, 38, 0.589),white);"(click)="delete(c)">Delete</button></li> 
+    </div>
+    
+    <button style="border:6px ridge rgba(32, 191, 219, 0.897);
+    background: linear-gradient(to right, rgba(37, 201, 223, 0.589),white);"(click)="logout()">Log Out</button>
+
+</ng-container>

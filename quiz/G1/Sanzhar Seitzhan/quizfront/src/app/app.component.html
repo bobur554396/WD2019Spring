@@ -1,0 +1,50 @@
+<ng-container *ngIf="!logged">
+    <div>
+      <div><input type="text" [(ngModel)]="login" /></div>
+      <div><input type="text" [(ngModel)]="password" /></div>
+      <div><button (click)="auth()">Log in</button></div>
+    </div>
+  </ng-container>
+  
+  <ng-container *ngIf="logged">
+
+    <ng-container>
+      <h1>Create new contact</h1>
+      <input type="text" [(ngModel)]="newname"/>
+      <input type="text" [(ngModel)]="newphone" />
+      <span style="color: green" (click)="newContact()"> Создать </span>
+    </ng-container>
+
+    <ng-container *ngIf="!loading">
+      Loading...
+    </ng-container>
+
+    <br/><br/><br/>
+    <h2>Contacts</h2>
+    <ng-container *ngIf="loading">
+      <div>
+        <div *ngFor="let c of contacts">
+          <ng-container *ngIf="c.id == editId">
+            <input type="text" [(ngModel)]="c.name"/>
+            <br/>
+            <input type="text" [(ngModel)]="c.phone" />
+            <br/>
+          </ng-container>
+          <ng-container *ngIf = "c.id !== editId">
+            <p>{{c.name}}</p>
+            <p>{{c.phone}}</p>
+          </ng-container>
+          <span style="color: blue" (click)="makeEditable(c.id)"> Изменить</span>
+          <span style="color: green" (click)="putDetailPost(c)"> Сохранить </span>
+          <span style="color: red" (click)="deleteItem(c)"> Удалить</span>
+        </div>
+      </div>
+    </ng-container>
+  
+    <br/>
+  
+    <div>
+      <button (click)="logout()">Log out</button>
+    </div>
+  
+  </ng-container>

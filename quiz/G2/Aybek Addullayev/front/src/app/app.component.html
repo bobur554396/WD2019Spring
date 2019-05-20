@@ -1,0 +1,40 @@
+<ng-container *ngIf="!authorized; else NotAuth">
+  <h1>Login Page</h1>
+  <input placeholder="Login" type="text" id="username" [(ngModel)]="login" [ngModelOptions]="{standalone:true}"/>
+  <br>
+  <input placeholder="Password" type="password"  id="password" [(ngModel)]="password" [ngModelOptions]="{standalone:true}"/>
+  <br>
+  <!-- <button (click)="auth()">Login</button> -->
+  <div>
+    <button (click)="auth()">Log in</button>
+  </div>
+
+</ng-container>
+
+<ng-template #NotAuth>
+  <h1>Logged in!</h1>
+  
+  <button (click)="logout()">Log out</button>
+
+  <div class="contact" *ngFor="let contact of contacts">
+    <ul>
+      <li>ID: {{contact.id}}</li>
+      <li>Name: 
+        <p style="color:white;"> 
+          <input type="text" [(ngModel)]="contact.name">
+        </p>
+      </li>
+      <li>Phone:
+        <p style="color:white;"> 
+          <input type="text" [(ngModel)]="contact.phone">
+        </p>
+      </li>
+    </ul>
+    
+    <button class="btn" (click)="updateContact(contact)">Update</button>
+    <button class="btn" (click)="deleteContact(contact)">Delete</button>
+  </div>
+</ng-template>
+
+
+<router-outlet></router-outlet>

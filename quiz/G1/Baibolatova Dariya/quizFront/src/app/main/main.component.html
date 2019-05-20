@@ -1,0 +1,47 @@
+<ng-container *ngIf="!logged">
+  <div>
+    <div><input type="text" [(ngModel)]="login" ></div>
+    <div><input type="text" [(ngModel)]="password" ></div>
+    <div><button style = "color: blue" (click)="auth()">Log in</button></div>
+  </div>
+</ng-container>
+
+<ng-container *ngIf="logged">
+  <h3 style = "color: purple">CREATE Contact</h3>
+  <div>
+    Enter name:
+    <input type="text" [(ngModel)]="name" />
+    <button style = "color: blue" (click) = "createContacts()" >Create</button>
+  </div>
+
+  <h3 style = "color: purple">Contacts</h3>
+  <h5 style = "color: Green">Add the phone number by clicking 'EDIT' if it's not defined</h5>
+
+  <ng-container *ngIf="!loading">
+  <h5>Wait a minute. Loading your contact list...</h5>
+  </ng-container>
+
+  <ng-container *ngIf ="loading">
+    <div>
+        <div *ngFor = "let c of contact">
+            <span (click) = "getContacts(l)" >
+              Name:
+              <input type="text" [(ngModel)] = "c.name">
+              Phone:
+              <input type="text" [(ngModel)] = "c.phone">
+            </span>
+            <span style="color: red; font-size: 20px" (click) = "deleteContacts(c)" > DELETE</span>
+            <span style="color: green; font-size: 20px" (click) = "updateContacts(c)" > EDIT</span>
+
+          </div>
+    </div>
+  </ng-container>
+
+  <br>
+
+
+  <div>
+      <button style = "color: blue; font-size: 15px" (click)="logout()">Log out</button>
+    </div>
+
+</ng-container>

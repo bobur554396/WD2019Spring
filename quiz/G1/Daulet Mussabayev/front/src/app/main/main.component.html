@@ -1,0 +1,21 @@
+<body>
+
+<h1>Contacts</h1>
+<div class = "contact">
+  <div *ngFor="let c of contacts">
+    <span (click)="getTasks(c)">{{c.name}}</span>
+    <span (click)="getTasks(c)">
+        <input type="text" [(ngModel)]="c.name" />
+      </span>
+    <span style="color: red" (click)="deleteContacts(c)"> Удалить</span>
+    <span style="color: green" (click)="updateContacts(c)"> Изменить</span>
+  </div>
+</div>
+
+
+<br/>
+<h3>Contacts</h3>
+<div class = "Contact">
+  <div *ngFor="let t of contacts">{{t.id}} - {{t.name}}}</div>
+</div>
+</body>

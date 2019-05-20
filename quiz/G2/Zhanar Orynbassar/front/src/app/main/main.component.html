@@ -1,0 +1,25 @@
+<div *ngIf="!logged">
+  <input type="text" placeholder="username..." [(ngModel)]="username">
+  <input type="text" placeholder="password..." [(ngModel)]="password">
+  <button (click) = "login()" class= "login">Login</button>
+</div>
+<div *ngIf = "logged">
+  <button (click) = "logout()" class= "login">Log out</button>
+  <div class="contacts">
+    <div class="content">
+      <div class="inContacts">
+        <div *ngFor="let c of conTacts" (click) = "getContacts(c)" class = "ConTact">
+          <div class="data">
+            <input type="text" [(ngModel)]="c.name">
+          </div>
+          <span (click) = "updateContact(c)">UPDATE</span>
+          <span (click) = "deleteContact(c)">DELETE</span>
+        </div>
+        <div class="create">
+          <input type="text" class = "createInput" id = "createInput" placeholder="No more than 200" [(ngModel)]="name">
+          <button class="createBtn" (click) = "createContact()">CREATE</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

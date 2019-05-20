@@ -1,0 +1,32 @@
+<div class="login" *ngIf="!isLogged">
+  <h2>Login</h2>
+  <input type="text" placeholder="Username" [(ngModel)]="login">
+  <input type="password" placeholder="Password" [(ngModel)]="password">
+  <input type="submit" value="Login" (click)="auth()">
+
+  <p>The only one problem is with cors :( The rest works perfectly</p>
+</div>
+
+<div class="main" *ngIf="isLogged">
+  <header>
+    <h1>Contact List</h1>
+  </header>
+
+  <button (click)="logout()">Logout</button>
+
+  <h2>Create contact</h2>
+  <input type="text" placeholder="Name" [(ngModel)]="contactName">
+  <input type="text" placeholder="Phone" [(ngModel)]="contactPhone">
+  <button (click)="createContact()">Add</button>
+
+  <ol>
+    <li *ngFor="let contact of contacts">
+      <h4>Name: {{contact.name}}</h4>
+      <h4>Phone: {{contact.phone}}</h4>
+      <input type="text" [(ngModel)]="contact.name"/>
+      <input type="text" [(ngModel)]="contact.phone"/>
+      <button (click)="editContact(contact)">Edit</button>
+      <button (click)="deleteContact(contact)">Delete</button>
+    </li>
+  </ol>
+</div>

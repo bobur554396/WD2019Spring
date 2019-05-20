@@ -1,0 +1,23 @@
+CREATE CONTACTs:
+<div>
+	<input type="text" [(ngModel)]="name">
+	<button (click)="createContact()">CREATE</button>
+</div>
+
+CONTACTS:
+
+<ng-container *ngIf="!loading">
+	...Loading
+</ng-container>
+
+<ng-container *ngIf="loading">
+	<div>
+		<div *ngFor="let list of contacts" (click)="getContacts(list)">
+			<span (click)="getContacts(list)">
+				<input type="text" [(ngModel)]="list.name">
+			</span>
+			<span (click)="deleteContacts(list)">Delete</span>
+			<span (click)="updateContacts(list)">Update</span>				
+		</div>
+	</div>
+</ng-container>

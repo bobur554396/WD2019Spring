@@ -1,0 +1,21 @@
+<div>
+  <input type="text" [(ngModel)]="name" />
+  <button (click)="createCont()">Create</button>
+</div>
+
+CATEGORIE
+<ng-container *ngIf="!loading">
+  Loading..
+</ng-container>
+
+<ng-container *ngIf="loading">
+  <div>
+    <div *ngFor="let c of contacts">
+      <span (click)="getProducts(c)">
+        <input type="text" [(ngModel)]="c.name" />
+      </span>
+      <span style="color: red" (click)="deleteCont(c)"> Delete</span>
+      <span style="color: green" (click)="updateCat(c)"> Edit</span>
+    </div>
+  </div>
+</ng-container>

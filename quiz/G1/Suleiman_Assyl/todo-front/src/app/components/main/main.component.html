@@ -1,0 +1,25 @@
+<div class="mainComponent">
+  <div class="loginForm">
+    <div *ngIf="!loggedIn">
+      <input type="text" placeholder="Type your username..." [(ngModel)]="username">
+      <input type="password" placeholder="Type your password..." [(ngModel)]="password">
+      <button (click)="login()">Sign In</button>
+    </div>
+    <div *ngIf="loggedIn">
+      <button (click)="logout()">Log out</button>
+    </div>
+  </div>
+  <div class="Contacts" *ngIf = "loggedIn">
+    <div class="contact" *ngFor = "let contact of contacts">
+      <input type="text" [(ngModel)]="contact.name">
+      <input type="text" [(ngModel)]="contact.phone">
+      <button (click)="updateContact(contact)">Update</button>
+      <button (click)="deleteContact(contact)">Delete</button>
+    </div>
+    <div class = "createContact">
+      <input type="text" placeholder="name" [(ngModel)]="newContactName">
+      <input type="text" placeholder="phone" [(ngModel)]="newContactPhone">
+      <button (click)="createContact()">Create</button>
+    </div>
+  </div>
+</div>

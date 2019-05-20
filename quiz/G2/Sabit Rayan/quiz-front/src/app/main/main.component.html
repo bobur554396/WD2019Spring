@@ -1,0 +1,51 @@
+    <header>
+        <div class="cont-header">
+            <p>Contact List</p>
+
+
+            <div class="login">
+              <ng-container *ngIf="!logged">
+              <input type="text" placeholder="username" [(ngModel)]="login" >
+              <input type="password" placeholder="password" [(ngModel)]="password" >
+              <button type="button" (click)="auth()" >Login</button>
+              </ng-container>
+            </div>
+
+            <div class="logout">
+              <ng-container *ngIf="logged">
+              <button type="button" (click)="logout()" >Log Out</button>
+              </ng-container>
+            </div>
+        </div>
+
+
+
+    </header>
+
+    <section>
+      <ng-container *ngIf="logged">
+        <div class="content">
+          <div class="tls">
+
+            <h1>List</h1>
+            <div class="cont-add" >
+
+              <input type="text" class="inp" placeholder="Contact Name" [(ngModel)]="newContact.name">
+              <input type="text" class="inp" placeholder="Phone number" [(ngModel)]="newContact.phone">
+              <button type="button" class="btn" (click)="createContact()" >Add</button>
+            </div>
+            <div class="tl" *ngFor="let c of contacts" >
+              <input type="text" class="inptl" [(ngModel)]="c.name" >
+              <input type="text" class="inptl" [(ngModel)]="c.phone" >
+              <button type="button" class="btndel" (click)="deleteContact(c)" >Delete</button>
+              <button type="button" class="btnupd" (click)="updateContact(c)" >Update</button>
+            </div>
+          </div>
+        </div>
+      </ng-container>
+    </section>
+
+
+
+
+

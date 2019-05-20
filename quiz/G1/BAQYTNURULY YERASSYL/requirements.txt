@@ -1,0 +1,8 @@
+Django==2.2
+django-cors-headers==2.5.3
+django-filter==2.1.0
+django-filters==0.2.1
+djangorestframework==3.9.3
+pkg-resources==0.0.0
+pytz==2019.1
+sqlparse==0.3.0

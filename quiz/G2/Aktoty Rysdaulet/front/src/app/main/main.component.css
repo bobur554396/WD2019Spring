@@ -1,0 +1,52 @@
+.delete{
+    color: red; 
+    border: 2px solid rgb(142, 23, 21);
+    margin-left: 10px;
+    font-size: 20px;
+}
+
+.show{
+    color: green; 
+    margin-left: 10px;
+    border: 2px solid rgb(14, 89, 23);
+    font-size: 20px;
+}
+
+.edit{
+    color: blue; 
+    border: 2px solid rgb(10, 34, 86);
+    margin-left: 10px;
+    font-size: 20px;
+}
+
+.lists{
+    margin-top: 10px;
+    margin-left: 10px;
+    font-size: 18px;
+    border: 2px solid rgb(5, 6, 10);
+}
+
+.text{
+    font-size: 17px;
+}
+
+.btn1{
+    height: 27px;
+    background: rgb(15, 116, 223);
+    border-radius: 10px;
+    font-size: 13px;
+    font-weight: bold;
+    color: rgb(255, 255, 255);
+    margin-left: 5px;
+}
+
+.btn{
+    height: 33px;
+    width: 100px;
+    background: rgb(15, 116, 223);
+    margin: 5px 0px 0px 2px;
+    border-radius: 10px;
+    font-size: 13px;
+    font-weight: bold;
+    color: rgb(255, 255, 255);
+}

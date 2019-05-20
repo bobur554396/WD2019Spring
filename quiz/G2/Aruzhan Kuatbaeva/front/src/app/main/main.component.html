@@ -1,0 +1,48 @@
+<div>
+  <ng-container *ngIf="!logged">
+      <h1>Contacts</h1>
+              <div class="auth">
+                    <div class="regist" >
+                        Authentication 
+                        <br><br>
+                        <label style="font-family: 'Gruppo';" for="username">Username</label>
+                        
+                        <input type="text" id="username" [(ngModel)]="login" [ngModelOptions]="{standalone:true}"/>
+                        
+                        <label for="password">Password</label>
+                       
+                        <input id="password" type="password" [(ngModel)]="password" [ngModelOptions]="{standalone:true}"/>
+                        
+                        <input id="but" type="submit" value="Log In" (click)="logIn()">
+                    </div>
+                    
+                    </div>
+            
+  
+  </ng-container>
+  <ng-container *ngIf="logged">
+    <h1>Contacts</h1>
+  <br>
+  <div style="white-space: nowrap;"><br>
+    <div style="display: inline;">
+      <div  class="contacts" >
+        <div  *ngFor="let t of contacts" (click)="getContacts(t)" >
+          <li id={{t.name}}> <p>{{t.name}}</p> <p>{{t.phone}}</p>
+    
+            <button  (click)="deleteList(t)">Delete</button> 
+            <button  (click)="updateList(t)">Update</button> 
+            
+          </li>
+          <input class ="update" id="{{t.id}}" type="text" [(ngModel)]="updated_name" style="visibility:hidden;" placeholder="New Name"></div>
+        </div>
+  
+      </div>
+      <div style="position: relative;top:-150px;">
+        </div>
+    </div>
+    <div class="detail">
+        <div *ngFor="let t of detail"><li><p>{{t.name}}</p><p>~{{t.like}}~</p><p>Created at: {{t.created_at}}</p></li></div>
+    </div>
+    <button (click)="logout()">Log Out</button>
+  </ng-container>
+  </div>

@@ -1,0 +1,50 @@
+<div id="body">
+<div id="authpage">
+<ng-container *ngIf="!isLogged">
+  <div>
+    <div>
+      <input id="Login" type="text" placeholder="Login" [(ngModel)]="login"/>
+    </div>
+    <div>
+      <input id="Password" type="password" placeholder="Password" [(ngModel)]="password"/>
+    </div>
+    <div>
+      <button (click)="auth()">Log in</button>
+    </div>
+  </div>
+</ng-container>
+</div>
+<div id="authedpage">
+<ng-container *ngIf="isLogged">
+  CREATE CONTACT:
+  <div>
+    <input type="text" [(ngModel)]="name" />
+    <input type="text" [(ngModel)]="phone" />
+    <button (click)="createContact()">Create</button>
+  </div>
+
+  Contacts
+  <ng-container *ngIf="!loading">
+    Loading...
+  </ng-container>
+
+  <ng-container *ngIf="loading">
+    <div>
+      <div *ngFor="let c of contacts">
+      <span (hold)="getContacts(c)">
+        <input type="text" [(ngModel)]="c.name" />
+        <input type="text" [(ngModel)]="c.phone" />
+      </span>
+        <button style="color: red" (click)="deleteContact(c)"> Удалить</button>
+        <button style="color: green" (click)="updateContact(c)"> Изменить</button>
+      </div>
+    </div>
+  </ng-container>
+  
+  <div>
+    <button (click)="logout()">Log out</button>
+  </div>
+
+</ng-container>
+</div>
+</div>

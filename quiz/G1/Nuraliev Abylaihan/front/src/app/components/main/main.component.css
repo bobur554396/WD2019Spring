@@ -1,0 +1,106 @@
+.menubar{
+    background-color: black;
+    height: 50px;
+
+}
+.main{
+    position: absolute
+}
+p{
+    font-size: 30px;
+}
+#adder{
+    overflow: hidden;
+    border-radius: 3px;
+    border: 1px solid gray;
+    padding: 6;
+    width: 500;
+    padding-bottom:8px;
+    padding-top:8px;
+    padding-left:10px;
+    padding-right:10px;
+    margin:6px;
+
+
+}
+
+.display
+{
+    border: 1px solid black;
+    padding: 15px;
+    border-radius: 3px;
+    width: 500px;
+    height: 50px;
+
+
+}
+.tl{
+    list-style: none;
+    margin: 0;
+    padding: 0;
+
+}
+#tl-l-l{
+  text-decoration: none;
+  font-family: 'Ubuntu Condensed', sans-serif;
+  letter-spacing: 2px;
+  padding-bottom: 20px;
+  margin: 0 34px 0 30px;
+  font-size: 20px;
+  text-transform: uppercase;
+  display: inline-block;
+  transition: color .2s;
+}
+#tl-l{
+  content: "|";
+  color: #606060;
+
+}
+
+ul{
+  margin: 0;
+  padding: 0;
+}
+li{
+  content: "|";
+  color: #606060;
+}
+a{
+  text-decoration: none;
+  font-family: 'Ubuntu Condensed', sans-serif;
+  letter-spacing: 2px;
+  padding-bottom: 20px;
+  margin: 0 34px 0 30px;
+  font-size: 14px;
+  text-transform: uppercase;
+  display: inline-block;
+  transition: color .2s;
+}
+
+
+.cntr
+{
+    position: absolute;
+    left: 30%;
+    top:30%;
+    width: 500px;
+    margin-bottom: 40px;
+    border: 2px dashed grey;
+    border-radius: 3px;
+    padding: 90px 90px 40px 90px;
+}
+.flx{
+  display: flex;
+  flex-direction:row;
+
+}
+.pad{
+  padding-right: 10px;
+  padding-bottom: 20px;
+}
+.norm{
+  display: flex;
+  flex-direction:row;
+  padding-right: 10px;
+  padding-bottom: 20px;
+}

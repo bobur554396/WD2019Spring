@@ -1,0 +1,39 @@
+<ng-container *ngIf=logged>
+    <h3 style="padding-left:70px;color:rgb(54, 48, 143,1)">CREATE CONTACT</h3>
+    <br>
+    <input type="text" >
+    <input type="text" >
+    <input type="text" >
+    <br>
+    <button  style="color: brown; font-size: 20px;background: white;border-radius: 7px;" id="btns" (click) = "createContact()" >CREATE</button>
+  <div class="tasklists">
+    <h1>CONTACTS</h1> 
+    <div *ngFor = "let c of contacts">
+      <span >
+        <input id="fortasklists"type="text" [(ngModel)] = "c.name">  
+      </span>
+      <button id="events" style="color: brown; font-size: 20px;background: white;border-radius: 7px;" (click) = "delContact(c)" > DELETE</button>
+      <button id="events" style="color:yellow; font-size: 20px;background: white;border-radius: 7px;" (click)="updateContact(c)"> UPDATE</button>
+      <button id="events" style="color:blueviolet;font-size: 20px;background: white;border-radius: 7px;" (click)="getContact(c)"> INFO</button>
+    </div>
+  </div> 
+  <button style="color: brown; font-size: 20px;background:white;border-radius:7px;"  (click)="logout()">LOG OUT</button>
+</ng-container>
+<ng-container *ngIf=info>
+  <div>
+    <h3>INFO</h3>
+    <input type="text" [(ngModel)]="contact.id">
+    <input type="text" [(ngModel)]="contact.name">
+    <input type="text" [(ngModel)]="contact.phone">
+    <input type="text" [(ngModel)]="contact.created_by">
+  </div>
+</ng-container>
+
+<ng-container *ngIf="!logged">
+    <div class="logging">
+      <h1 style="color:rgb(54, 48, 143,1);padding-left:15px ">WELCOME!</h1>
+      <div><input id="btnoflog" type="text" [(ngModel)]="login" ></div>
+      <div><input id="btnoflog" type="password" [(ngModel)]="password" ></div>
+      <div><button id="authbtn"  style="color: brown; font-size: 20px;background:white;border-radius:7px;" (click)="auth()">Log in</button></div>
+    </div>  
+  </ng-container>    

@@ -1,0 +1,33 @@
+/* You can add global styles to this file, and also import other style files */
+*{
+    font-family: 'Poiret One';
+    font-size: 20px;
+    white-space: nowrap;
+}
+
+button,input[type="submit"],input{
+    border:6px ridge rgb(129, 10, 184);
+    border-radius: 10px;
+    margin:10px;
+    padding:5px;
+    font-size: 20px;
+    box-shadow: 0 0 4px rgb(6, 1, 37);
+    font-weight: bold;
+    color:rgb(34, 79, 226);
+    
+    background: linear-gradient(to right, rgba(143, 22, 143, 0.589),white);
+}
+button:hover,input[type="submit"]:hover{
+    border:6px ridge rgb(76, 122, 223);
+   
+}
+button:focus,input:focus{
+    outline: none;
+}
+input::placeholder{
+    color:white;
+}
+input:disabled{
+    color:black;
+}
+

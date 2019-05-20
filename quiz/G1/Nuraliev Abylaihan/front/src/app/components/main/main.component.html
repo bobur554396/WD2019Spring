@@ -1,0 +1,39 @@
+<ng-container *ngIf="!logged">
+  <div class="cntr">
+    <div><input id="email" type="text" class="form-control" name="email" placeholder="username" [(ngModel)]="login"></div><br>
+    <div><input id="password" type="password" class="form-control" name="password" placeholder="Password" [(ngModel)]="password "></div><br>
+    <div><button class="btn btn-info btn-block my-4" (click)="auth()">Log in</button></div><br>
+  </div>
+  </ng-container>
+
+
+
+
+  <ng-container *ngIf="logged">
+      <div>
+          <div *ngFor="let c of contacts">
+            <div class="flx">
+                <div class=pad><span><input type="text" id="materialLoginFormEmail" class="form-control" [(ngModel)]="c.name"></span></div>
+                <div class=pad><span><input type="text" id="materialLoginFormEmail" class="form-control" [(ngModel)]="c.phone"></span></div>
+                <div class=pad><button class="btn btn-danger" (click)="deleteContact(c)"> Delete</button></div>
+                <div class=pad><button class="btn btn-warning" (click)="updateContact(c)"> Update</button></div>
+            </div>
+        </div><br>
+        <div class="norm">
+            <div class="norm"><input type="text" id="materialLoginFormEmail" class="form-control" [(ngModel)]="name" style="width:185px;"></div>
+            <div class="norm"><input type="text" id="materialLoginFormEmail" class="form-control" [(ngModel)]="phone" style="width:185px;"></div>
+            <div class="norm"><button  style="width:100px;" class="btn btn-primary" (click)="createContact()" >Create</button></div>
+          </div>
+        </div>
+        <br>
+        <br>
+      
+
+        <div>
+            <div class="norm"><button  style="width:100px;" class="btn btn-primary" (click)="logout()" >logout</button></div>
+        </div>
+      
+  </ng-container>
+ 
+ 
+

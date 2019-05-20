@@ -1,0 +1,29 @@
+<!-- <p>
+  main works!
+</p> -->
+<ng-container *ngIf="!logged"  >
+  <div>
+      <div>
+        <input type = "text" [(ngModel)]="login"/>
+      </div>
+      <div>
+        <input type = "text" [(ngModel)]="password" />
+      </div>
+      <div><button (click)="auth()">Log in</button></div>
+  </div>
+</ng-container>
+
+<ng-container *ngIf="logged" >
+  Create Contact:
+  <div>
+    <input type= "text" [(ngModel)]= "name" >
+    <button (click)="createContacts()">Create</button>
+  </div>
+  Contacts:
+  <div>
+    <div *ngFor="let Contact of contacts" >
+      <button style = "color: red" (click)= "deleteContacts(Contact)"> Удалить</button>
+      <button style = "color: green" (click)= "updateContacts(Contact)"> Изменить</button>
+    </div>
+  </div>
+</ng-container>

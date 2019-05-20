@@ -1,0 +1,68 @@
+
+<div>
+<ng-container *ngIf="!logged">
+    <h1>Task Lists
+        <img  id="gif" src="https://i.gifer.com/Xi5e.gif" width=200px>
+    </h1>
+            <div class="auth">
+                  <div class="regist" >
+                      Authentication 
+                      <br><br>
+                      <label style="font-family: 'Gruppo';" for="username">Username</label>
+                      
+                      <input type="text" id="username" [(ngModel)]="login" [ngModelOptions]="{standalone:true}"/>
+                      
+                      <label for="password">Password</label>
+                     
+                      <input id="password" type="password" [(ngModel)]="password" [ngModelOptions]="{standalone:true}"/>
+                      
+                      <input id="but" type="submit" value="Log In" (click)="logIn()">
+                  </div>
+                  
+                  </div>
+          
+
+</ng-container>
+<ng-container *ngIf="logged">
+    <h1>Task Lists
+        <img  id="gif" src="https://i.gifer.com/YCne.gif" width=200px>
+    </h1>
+  <br>
+  <div style=" display: inline;  white-space: nowrap;">
+    ADD NEW TASK LIST:
+    <input type="text" [(ngModel)]="name" placeholder="Name"/>
+    <img id="yes" (click)="createList()" (mouseenter)="mouseOn(1)" (mouseleave)="mouseOff(1)" src="../../assets/add.png" width="40" style="position: relative; top:10px;">
+  </div>
+  <br>
+  
+  <br>
+  <br>
+  <div style="display: inline;">
+    <img id="ar1" src="../../assets/arrow2.png" width=70px>
+    <div  class="lists" >
+      <div  *ngFor="let t of taskLists" (click)="getTasks(t)" >
+        <li id={{t.name}}> {{t.name}}
+          
+          <img  (click)="deleteList(t)" class="func" src="../../assets/delete.png" width=28>
+          <img  (click)="updateList(t)" class="func" src="../../assets/update.png" width=25>
+          
+        </li>
+        <input class ="update" id="{{t.id}}" type="text" [(ngModel)]="updated_name" style="visibility:hidden;" placeholder="New Name"></div>
+      </div>
+      <img id="ar2" src="../../assets/arrow.png" width=70px>
+    </div>
+    <div style="position: relative;top:-150px;">
+      
+        <div style=" display: inline;  white-space: nowrap;">
+            ADD NEW TASK:
+            <input type="text" [(ngModel)]="task_name" placeholder="Name"/>
+            <img id="yes2" (click)="createTask()" (mouseenter)="mouseOn(2)" (mouseleave)="mouseOff(2)" src="../../assets/add.png" width="40" style="position: relative; top:10px;">
+          </div>
+    
+  </div>
+  <div class="tasks">
+      <div *ngFor="let t of tasks"><li><p>{{t.name}}</p><p>~{{t.status}}~</p><p>Created at: {{t.created_at}}</p><p>Due on: {{t.due_on}}</p></li></div>
+  </div>
+  <button (click)="logout()">Log Out</button>
+</ng-container>
+</div>

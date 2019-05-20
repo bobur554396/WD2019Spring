@@ -1,0 +1,12 @@
+<ng-container *ngIf = "!logged">
+    <div>
+    <input type="text" [(ngModel)]="login">
+    <input type="text" [(ngModel)]="password">
+    <button (click)="auth()">Log in</button>
+  </div>
+  </ng-container>
+  
+  <ng-container *ngIf="logged">
+        <div *ngFor="let contactList of contactlist" >{{contactList.name}} - {{contactList.phone}}</div>
+ 
+  <p>

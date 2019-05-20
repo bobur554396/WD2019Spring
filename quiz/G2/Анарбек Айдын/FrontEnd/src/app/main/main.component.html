@@ -1,0 +1,32 @@
+<html>
+    <head>
+        <title>ToDo</title>
+    </head>
+    <body>
+
+        <div class="menubar">
+            <br>
+            <span style="position: absolute; left: 150px;color: grey; font-size: 20px;">ToDo List</span>
+        </div>
+        <h1 style="position:absolute;left:40%;font-family: 'Ubuntu Condensed', sans-serif;">CATEGORIES</h1>
+
+      <div style="position:absolute;left:37%;top:20%;">
+        <div>
+          <ul class="tl">
+            <li id="tl-l"><a id="tl-l-l" *ngFor="let tl of t_ls" (click)="getTasks(tl)" >{{tl.name}}</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <ul>
+            <li  *ngFor="let t of tasks"><a>{{t.name}}-<span style="color: blue;">{{t.status}}</span></a></li>
+          </ul>
+
+        </div>
+      </div>
+
+
+
+
+    </body>
+</html>

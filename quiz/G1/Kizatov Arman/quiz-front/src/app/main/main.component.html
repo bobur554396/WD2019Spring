@@ -1,0 +1,30 @@
+<ng-container *ngIf="!loggedIn">
+  <input type="text" [(ngModel)] = "logiN">
+  <input type="password" [(ngModel)] = "password">
+  <button (click) = "login()">Login</button>
+</ng-container>
+
+<ng-container *ngIf="loggedIn">
+  <input type="text" [(ngModel)]="contactName">
+  <input type="text" [(ngModel)]="contactPhone">
+  <button (click)="createContact()">Create contact</button><br>
+
+  Your Contacts:
+  <div *ngFor="let c of mycontacts">
+    <ng-container *ngIf="updatePressed">
+      <input type="text" [(ngModel)] = "c.name">
+      <input type="text" [(ngModel)] = "c.phone">
+      <button (click)="updateContact(c)">update Backend</button>
+      <button (click)="deleteContact(c)">Delete Current</button>
+      <button (click)="getContacts()" (click)="pressToVisible()">BackToList</button>
+    </ng-container>
+
+    <ng-container *ngIf="!updatePressed">
+      <div>{{c.name}}</div>
+      <div>{{c.phone}}</div>
+      <button (click)="pressToVisible()">UpdateFields</button>
+    </ng-container>
+  </div>
+
+  <button (click)="logout()">Logout</button>
+</ng-container>

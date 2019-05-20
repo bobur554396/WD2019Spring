@@ -1,0 +1,45 @@
+.contacts {
+  text-align: center;
+  margin-left: 35px;
+}
+.create {
+  text-align: center;
+}
+.logout {
+  margin-top: 20px;
+  margin-right: 120px;
+}
+button {
+  border-radius: 5px;
+  border: none;
+  width: 100px;
+  height: 26px;
+  margin-left: 10px;
+  cursor: pointer;
+}
+a {
+  text-decoration: none;
+  font-size: 25px;
+  margin-left: 10px;
+  cursor: pointer;
+}
+input {
+  border-radius: 5px;
+  width: 200px;
+  height: 25px;
+  text-align: center;
+}
+.tasks {
+  color: #4fdee5;
+  text-align: center;
+  font-size: 22px;
+}
+h1 {
+  text-align: center;
+  color: darkorange;
+}
+body {
+  text-align: center;
+  background-color: #1c2833;
+  height: 900px;
+}
